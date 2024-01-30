@@ -20,10 +20,10 @@ const main = async () => {
   const source = core.getInput('source')
   assert(source.endsWith('.tar.gz'), 'source must point to a .tar.gz file')
 
-  const w3namePrivateKey = core.getInput('w3name-private-key')
-  const w3nameRevision = core.getInput('w3name-revision')
   const w3upPrivateKey = core.getInput('w3up-private-key')
   const w3upProof = core.getInput('w3up-proof')
+  const w3namePrivateKey = core.getInput('w3name-private-key')
+  const w3nameRevision = core.getInput('w3name-revision')
 
   const principal = ed25519.Signer.parse(w3upPrivateKey)
   const web3Storage = await Client.create({ principal })
