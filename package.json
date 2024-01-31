@@ -2,7 +2,7 @@
   "name": "publish-zinnia-module-action",
   "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "(Apache-2.0 AND MIT)",
   "description": "Publish a Zinnia module to the registry",
   "repository": "filecoin-station/publish-zinnia-module-action",
