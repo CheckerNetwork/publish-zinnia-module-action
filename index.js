@@ -34,12 +34,7 @@ const main = async () => {
   const name = await Name.from(Buffer.from(w3namePrivateKey, 'hex'))
   const revision = Name.Revision.decode(Buffer.from(w3nameRevision, 'hex'))
 
-  const file = new File(
-    await filesFromPaths([source]),
-    'source.tar.gz',
-    { type: 'application/gzip' }
-  )
-  const cid = await web3Storage.uploadFile(file)
+  const cid = await web3Storage.uploadFile((await filesFromPaths([source]))[0])
   console.log(`Uploaded as ${cid}`)
 
   const nextRevision = await Name.increment(revision, `/ipfs/${cid}`)
