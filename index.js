@@ -31,8 +31,8 @@ const main = async () => {
   const space = await web3Storage.addSpace(proof)
   await web3Storage.setCurrentSpace(space.did())
 
-  const name = await Name.from(w3namePrivateKey)
-  const revision = Name.Revision.decode(w3nameRevision)
+  const name = await Name.from(Buffer.from(w3namePrivateKey, 'hex'))
+  const revision = Name.Revision.decode(Buffer.from(w3nameRevision, 'hex'))
 
   const file = new File(
     await filesFromPaths([source]),
