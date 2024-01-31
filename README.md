@@ -20,3 +20,8 @@ steps:
       w3name-private-key: ${{ secrets.W3NAME_PRIVATE_KEY }}
       w3name-revision: ${{ secrets.W3NAME_REVISION }}
 ```
+
+See https://web3.storage/docs/how-to/upload/#bring-your-own-delegations for
+`w3up-*` credentials.
+
+For `w3name-*`, use a script like [scripts/w3name.js](./scripts/w3name.js).
