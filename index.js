@@ -36,6 +36,7 @@ const main = async () => {
 
   const cid = await web3Storage.uploadFile((await filesFromPaths([source]))[0])
   console.log(`Uploaded as ${cid}`)
+  core.setOutput('cid', cid.toString())
 
   const nextRevision = await Name.increment(revision, `/ipfs/${cid}`)
   await Name.publish(nextRevision, name.key)
