@@ -1,20 +1,10 @@
 import core from '@actions/core'
 import { ed25519 } from '@ucanto/principal'
 import * as Client from '@web3-storage/w3up-client'
-import { CarReader } from '@ipld/car'
-import { importDAG } from '@ucanto/core/delegation'
+import * as Proof from '@web3-storage/w3up-client/proof'
 import * as Name from 'w3name'
 import { filesFromPaths } from 'files-from-path'
 import assert from 'node:assert'
-
-const parseProof = async data => {
-  const blocks = []
-  const reader = await CarReader.fromBytes(Buffer.from(data, 'base64'))
-  for await (const block of reader.blocks()) {
-    blocks.push(block)
-  }
-  return importDAG(blocks)
-}
 
 const main = async () => {
   const source = core.getInput('source', { required: true })
@@ -27,7 +17,7 @@ const main = async () => {
 
   const principal = ed25519.Signer.parse(w3upPrivateKey)
   const web3Storage = await Client.create({ principal })
-  const proof = await parseProof(w3upProof)
+  const proof = await Proof.parse(w3upProof)
   const space = await web3Storage.addSpace(proof)
   await web3Storage.setCurrentSpace(space.did())
 
