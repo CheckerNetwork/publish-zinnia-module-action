@@ -25,6 +25,7 @@
     "@ipld/car": "^5.2.6",
     "@ucanto/core": "^9.0.1",
     "@ucanto/principal": "^9.0.0",
+    "@web3-storage/access": "^20.1.2",
     "@web3-storage/w3up-client": "^16.5.2",
     "files-from-path": "^1.0.4",
     "w3name": "^1.0.8"
