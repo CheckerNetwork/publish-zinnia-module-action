@@ -29,7 +29,7 @@
     "w3name": "^1.0.9"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.38.1",
+    "@vercel/ncc": "^0.38.3",
     "np": "^9.2.0",
     "standard": "^17.1.2"
   }
