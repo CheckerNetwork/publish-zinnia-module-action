@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.3",
-    "np": "^9.2.0",
+    "np": "^10.2.0",
     "standard": "^17.1.2"
   }
 }
